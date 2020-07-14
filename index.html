@@ -1,0 +1,499 @@
+<html>
+ <head>
+  <title>ICS Testbed Tetris: Shared Resources</title>
+  <style>
+   .center { display: block; margin-left: auto; margin-right: auto; width: 50%; }
+   .showHide { color: blue; text-decoration: underline; cursor: pointer; }
+   .implementation-options { display:none; }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ </head>
+ <body>
+  <img src="lancaster-university-logo.png" class="center">
+  
+  <p>This document presents the shared resources for our publication "<b>ICS Testbed Tetris: Practical Building Blocks Towards a Cyber Security Resource</b>" categorised per layer and per elements.</p>
+  <p>If you would like to contribute to the development of this shared resource, please email us at <a href="mailto:tide-ssg@lancaster.ac.uk">tide-ssg@lancaster.ac.uk</a>.</p>
+  
+  <img src="model.png" class="center">
+  <br /><br />
+  <img src="model-breakdown.png" class="center">
+ 
+  <h1>Management Layer</h1>
+   <p>The <i>Management Layer</i> acts as central point from which oversight of a testbed can be established. This includes general functionality, from server management to network management, but extends to safety and security. If deployed in isolation from other layers as per our model, a clear demarcation between usable infrastructure and operational oversight can be established. However this may not be practical in smaller deployments.</p>
+   
+   <h2>User Access Control</h2>
+   
+   <p>User access control is available through Microsoft Active Directory [<a href="#42">42</a>] and Zentyal [<a href="#178">178</a>].<br />
+   A common protocol used for these platforms is LDAP [<a href="#177">177</a>, <a href="#164">164</a>, <a href="#26">26</a>].<br />
+   CPNI provides guidance for physical access control [<a href="#39">39</a>].</p>
+	<span class="showHide" onClick="$('#uac').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="uac">
+	  <a id="26" href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_ldap/configuration/15-mt/sec-usr-ldap-15-mt-book/sec_conf_ldap.html">[26] Cisco. AAA LDAP Configuration Guide. Cisco IOS Release 15M&T. </a><br />
+	  <a id="39" href="https://www.cpni.gov.uk/physical-security">[39] CPNI. Physical Security. </a><br />
+	  <a id="42"></a>[42] Brian Desmond, Joe Richards, Robbie Allen, and Alistair G Lowe-Norris. Active Directory: Designing,Deploying, and Running Active Directory. " O’ReillyMedia, Inc.", 2008.<br />
+	  <a id="164" href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-98B36135-CDC1-435C-8F27-5E0D0187FF7E.html">[164] vmware. Active Directory LDAP Serverand OpenLDAP Server Identity SourceSettings. </a><br />
+	  <a id="177"></a>[177] Kurt Zeilenga et al. Lightweight directory access protocol (ldap): Technical specification road map. Technicalreport, RFC 4510, June, 2006.<br />
+	  <a id="178" href="https://doc.zentyal.org/en/directory.html">[178] Zntyal. Domain Controller and File Sharing. </a>
+	 </p>
+   
+   <h2>Computational Resource Management</h2>
+   <p>Virtualization solutions are available for computational resource management including vSphere (ESXI) [<a href="#170">170</a>], Hyper-V [<a href="#89">89</a>], and OpenStack [<a href="#108">108</a>] with centralised management [<a href="#167">167</a>] and APIs [<a href="#169">169</a>].<br />
+   Non-virtualized environments may use remote system-level access such as RDP [<a href="#91">91</a>] or SSH [<a href="#92">92</a>].<br />
+   Network architecture broader server and infrastructure monitoring tools such as Splunk [<a href="#151">151</a>] can be deployed.</p>
+	<span class="showHide" onClick="$('#crm').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="crm">
+	  <a id="89" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/">[89] Microsoft. Hyper-V on Windows 10. </a><br />
+	  <a id="91" href="https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access">[91] Microsoft. Remote Desktop - Allow access to your PC. </a><br />
+	  <a id="92" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">[92] Microsoft. Installation of OpenSSH For Windows Server 2019 and Windows 10. </a><br />
+	  <a id="108" href="https://www.openstack.org/software/">[108] Openstack. Software. </a><br />
+	  <a id="151" href="https://www.splunk.com/en_us/it-operations/server-monitoring.html">[151] splunk. Server Monitoring Software and Tools.</a><br />
+	  <a id="167" href="https://www.vmware.com/uk/products/vcenter-server.html">[167] vmware. vCenter Server. </a><br />
+	  <a id="169" href="https://www.vmware.com/support/pubs/sdk_pubs.html">[169] vmware. VMware API and SDK Documentation. </a><br />
+	  <a id="170" href="https://www.vmware.com/uk/products/vsphere.html">[170] vmware. vSphere. </a>
+	 </p>
+   
+   <h2>Network Resource Management</h2>
+   <p>Network devices can be accessed using an IP to console server [<a href="#105">105</a>].<br />
+   VLANs are recommended [<a href="#168">168</a>].<br />
+   A centralised switch allows centralisation, support of SDN [<a href="#84">84</a>], and mirror data feeds [<a href="#27">27</a>].<br />
+   Networks can be simulated with software such as Packet Tracer [<a href="#30">30</a>].<br />
+   Monitoring tools such as Nagios [<a href="#99">99</a>] and Splunk [<a href="#152">152</a>] may provide value.<br />
+   External connectivity can be managed with structured static routing [<a href="#29">29</a>], access control lists [<a href="#31">31</a>], and intrusion detection/prevention (IDS/IPS) [<a href="#20">20</a>].</p>
+	<span class="showHide" onClick="$('#nrm').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="nrm">
+	  <a id="20" href="https://www.checkpoint.com/products/intrusion-prevention-system-ips/">[20] Check Point. Intrusion Prevention System(IPS). </a><br />
+	  <a id="27" href="https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-switches/10570-41.html">[27] Cisco. Catalyst Switched Port Analyzer(SPAN) Configuration Example. </a><br />
+	  <a id="29" href="https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/5_x/nx-os/unicast/configuration/guide/l3_cli_nxos/l3_route.html">[29] Cisco. Chapter: Configuring Static Routing. </a><br />
+	  <a id="30" href="https://www.netacad.com/courses/packet-tracer">[30] Cisco. Cisco Packet Tracer. </a><br />
+	  <a id="31" href="https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html">[31] Cisco. Configuring IP Access Lists.</a><br />
+	  <a id="84"></a>[84] Yong Li and Min Chen. Software-defined networkfunction virtualization: A survey. IEEE Access, 3:2542–2553, 2015.<br />
+	  <a id="99" href="https://www.nagios.org/about/">[99] Nagios. What Is Nagios? </a><br />
+	  <a id="105" href="https://opengear.com/results/serial-console-server">[105] opengear. Serial Console Servers. </a><br />
+	  <a id="152" href="https://docs.splunk.com/Documentation/MINTMgmtConsole/1.0/UserGuide/Networkmonitoring">[152] splunk. Splunk MINT Management ConsoleUser Guide. </a><br />
+	  <a id="168" href="https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.networking.doc%2FGUID-7225A28C-DAAB-4E90-AE8C-795A755FBE27.html">[168] vmware. VLAN Configuration. </a>
+	 </p>
+   
+   <h2>Process and Safety</h2>
+   <p>Basic electrical safety training [<a href="#155">155</a>], following wiring recommendations including power separation [<a href="#50">50</a>, <a href="#126">126</a>], and encasing all live equipment in suitable panels [<a href="#153">153</a>] is recommended.<br />
+   Real-world out-of-loop safety systems could be used. [<a href="#119">119</a>, <a href="#120">120</a>].<br />
+   Additional formal guidance is available in standards including ISO 62061 [<a href="#16">16</a>], IEC 13849-1 [<a href="#17">17</a>] and IEC 61508 [<a href="#15">15</a>].</p>
+	<span class="showHide" onClick="$('#pas').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="pas">
+	  <a id="15"></a>[15] BSI. 61508-1:2010: Functional Safety of Electrical/Electronic/ Programmable Electronic SafetyRelated Systems. Technical report, 2010.<br />
+	  <a id="16"></a>[16] BSI. 62061-1:2010: Guidance on the Application ofISO 13849-1 and IEC 62061 in the Design of Safety Related Control Systems for Machinery. Technicalreport, 2010.<br />
+	  <a id="17"></a>[17] BSI. 13849-1:2015: Safety of Machinery - SafetyRelated Parts of Control Systems - Part 1: GeneralPrinciples for Design. Technical report, 2015.<br />
+	  <a id="50" href="https://www.electrical-installation.org/enwiki/Wiring_recommendations">[50] Electrical-installation.org. Wiring Recommendations.</a><br />
+	  <a id="119" href="https://profinetuniversity.com/functional-safety/safety-basics-machine-safety/">[119] Profinetuniversity.com. Industrial SafetyBasics-Machine Safety. </a><br />
+	  <a id="120" href="https://profinetuniversity.com/functional-safety/safety-basics-conventional-vs-combined-safety/">[120] Profinetuniversity.com. Safety Basics â€“ Conventional vs Combined Safety. </a><br />
+	  <a id="126" href="http://www.rhyshaden.com/pwrsep.htm">[126] Rhyshaden.com. Power Separation Guidelines. </a><br />
+	  <a id="153" href="https://www.mpofcinci.com/blog/industrial-control-panel-design-guide/">[153] Shelly Stazzone. Industrial Control Panel DesignGuide: Schematics Standards Design Considerations& More. </a><br />
+	  <a id="155" href="https://study.com/articles/List_of_Free_Online_Electrician_Courses_Classes_and_Learning_Materials.html">[155] Study.com. List of Free Online Electrician Courses Classes and Learning Materials.</a>
+	 </p>
+   
+   <h2>Security Monitoring</h2>
+    <p>See SOC section.</p>
+	<span class="showHide" onClick="$('#sm').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="sm">
+	  <mark>Empty</mark>
+	 </p>
+   
+  <h1>User Layer</h1>
+  <p>The <i>User Layer</i> presents an opportunity to centralise and manage a set of resources, which testbed users may require to deliver against set objectives. The benefit of this layer can be seen as the management of experimental tooling and systems with visibility over/access to the <i>Experimental Layer</i>. This may take many forms, particularly in smaller deployments.</p>
+   
+   <h2>Workstations</h2>
+    <p>The Kali Linux distribution [<a href="#138">138</a>] comes prebuilt with a large number of useful tools.<br />
+Additional tools include network analysis [<a href="#173">173</a>], scripting [<a href="#123">123</a>], reverse engineering [<a href="#5">5</a>], debugging [<a href="#95">95</a>], and bespoke ICS vendor software [<a href="#148">148</a>].</p>
+	<span class="showHide" onClick="$('#workst').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="workst">
+	  <a id="5" href="https://ghidra-sre.org/">[5] National Security Agency. GHIDRA. </a><br />
+	  <a id="95" href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools">[95] Microsoft. Download Debugging Tools forWindows. </a><br />
+	  <a id="123" href="https://www.python.org/about/">[123] Python. About. </a><br />
+	  <a id="138" href="https://www.kali.org/about-us/">[138] Offensive Security. About Kali Linux. </a><br />
+	  <a id="148" href="https://new.siemens.com/global/en/products/automation/industry-software/automation-software/tia-portal/software.html">[148] Siemens. Software in the TIA Portal. </a><br />
+	  <a id="173" href="https://www.wireshark.org/">[173] Wireshark. About Wireshark. </a>
+	 </p>
+   
+   <h2>User Access Control</h2>
+    <p>See UAC section in Management Layer.</p>
+	<span class="showHide" onClick="$('#uacu').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="uacu">
+	  <mark>Empty</mark>
+	 </p>
+   
+   <h2>Jump Box</h2>
+    <p>Authentication with a Jump Box should follow User Access Control guidelines.</p>
+	<span class="showHide" onClick="$('#jb').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="jb">
+	  <mark>Empty</mark>
+	 </p>
+   
+   <h2>Storage</h2>
+    <p>User Access Control methods can be used to manage resources on a user-by-user basis.<br />
+Platforms such as vSphere support iSCSI devices [<a href="#43">43</a>, <a href="#165">165</a>] and network attached storage [<a href="#44">44</a>, <a href="#166">166</a>].</p>
+	<span class="showHide" onClick="$('#stor').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="stor">
+	  <a id="43" href="https://www.drobo.com/storage-products/b810i/">[43] Drobo. Drobo B810i. </a><br />
+	  <a id="44" href="https://www.drobo.com/storage-products/b810n/">[44] Drobo. Drobo B810n. </a><br />
+	  <a id="165" href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-C476065E-C02F-47FA-A5F7-3B3F2FD40EA8.html">[165] vmware. Configuring iSCSI Adapters and Storage.</a><br />
+	  <a id="166" href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-9282A8E0-2A93-4F9E-AEFB-952C8DCB243C.html">[166] vmware. Understanding NetworkFile System Datastores. </a>
+	 </p>
+   
+   <h2>Network Data Capture</h2>
+    <p>Wireshark [<a href="#173">173</a>] is the leading network data capture software.<br />
+	Nwtwork traffic can be centralised using SPAN/RSPAN for Cisco [<a href="#27">27</a>], or analysers for Juniper [<a href="#74">74</a>].</p>
+	<span class="showHide" onClick="$('#ndc').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="ndc">
+	  <a id="27" href="https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-switches/10570-41.html">[27] Cisco. Catalyst Switched Port Analyzer(SPAN) Configuration Example. </a><br />
+	  <a id="74" href="https://www.juniper.net/documentation/en_US/junos/topics/concept/port-mirroring-ex-series-l2.html">[74] Juniper. Understanding Port MirroringAnalyzers. </a><br />
+	  <a id="173" href="https://www.wireshark.org/">[173] Wireshark. About Wireshark. </a>
+	 </p>
+   
+   <h2>Process Data Capture</h2>
+    <p>Software defined radio (SDR) technologies can be used to capture radio traffic from wireless sensor network devices (see Local Experimentation Devices section).<br />
+	Network data captures, additional sensors, the data of an out-of-loop safety system, and video cameras can be used to validate operational process states.</p>
+	<span class="showHide" onClick="$('#pdc').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="pdc">
+	  <mark>Empty</mark>
+	 </p>
+   
+   <h2>Local Experimental Devices</h2>
+    <p>Wireless data can be captured with specialised hardware supporting for example SDR, WiFi, Bluetooth, or Infra-Red, with devices such as Blade RF [<a href="#103">103</a>], Open Sniffer [<a href="#140">140</a>], and Alfa AWUS036NHA [<a href="#101">101</a>].</p>
+	<span class="showHide" onClick="$('#led').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="led">
+	  <a id="101" href="https://www.alfa.com.tw/products_detail/7.htm">[101] ALFA Network. AWUS036NHA. </a><br />
+	  <a id="103" href="https://www.nuand.com/bladerf-1/">[103] nuand. bladeRF. </a><br />
+	  <a id="140" href="https://www.sewio.net/open-sniffer/">[140] sewio. Open Sniffer For 802.15.4 Zigbee 6lowpan.</a>
+	 </p>
+	
+  <h1>Infrastructure Bridge Layer</h1>
+  <p>Where a <i>User Layer</i> has been implemented, including an <i>Infrastructure Bridge</i> between it, and the <i>Experimental Layer</i>, can yield benefits aligned to data leakage and general system management/security. This bridge provides a network infrastructure to control the flow of data between the <i>User Layer</i> and the <i>Experimental Layer</i>. This can be of benefit when conducting high-risk research within the <i>Experimental Layer</i>, limiting the spread of malicious artefacts onto <i>User Layer</i> systems.</p>
+  
+  <h1>Experimental Layer</h1>
+  <p>Forming the core component of any ICS testbed is the <i>Experimental Layer</i>, where all ICS components are deployed. Considering the Purdue Model as a high-level representation of ICS attributes, the <i>Experimental Layer</i> is where these are deployed. In addition to ICSs, we also consider neighbouring and emerging technologies encroaching into the ICS space that may need to be considered by testbed users. This includes building management systems (BMS), and the Internet of Things (IoT). As this model is designed to support cyber security testbed design, additional related systems may also be required here, Security Operations Centres (SOC) for example.</p>
+   
+   <h2>Industrial Control System</h2>
+   <p>Practical examples of ICS architectures are presented by NIST [<a href="#154">154</a>], Kaspersky [<a href="#77">77</a>], and Cisco [<a href="#28">28</a>].<br />
+   Process replication can be done physically with a self-built approach [<a href="#127">127</a>], using an off-the-shelf option replicating large scale processes [<a href="#65">65</a>] or mini replication kits [<a href="#55">55</a>]. Process replication can also be done virtually using simulation solutions either commercially [<a href="#51">51</a>], using open-sourced projects [<a href="#56">56</a>], or self-built using industrial protocols libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>].<br />
+   Physical devices vendors include [<a href="#131">131</a>], Schneider [<a href="#46">46</a>], ABB [<a href="#3">3</a>], and [<a href="#145">145</a>]. Some include stater kits [<a href="#142">142</a>, <a href="#162">162</a>]. PLCs simulation software are available [<a href="#149">149</a>], or could be self-developed using microcontroller development boards/single board computers [<a href="#10">10</a>, <a href="#14">14</a>, <a href="#115">115</a>]..<br />
+   HMIs can be obtained from Rockwell [<a href="#130">130</a>], Schneider [<a href="#48">48</a>], ABB [<a href="#2">2</a>], and Siemens [<a href="#143">143</a>], can be replaced by desktop-based software [<a href="#129">129</a>, <a href="#147">147</a>], or could be self-developed using libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>].<br />
+   Historian software such as OSISoft [<a href="#111">111</a>] and Kepware [<a href="#79">79</a>] can be used to collect and analyse data. It could also be self-developed using libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>, <a href="#110">110</a>, <a href="#85">85</a>].<br />
+   Top-end DMZ system can be developed using libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#85">85</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#110">110</a>, <a href="#118">118</a>]. Commercial solutions are available from  Rockwell [<a href="#128">128</a>], Schneider [<a href="#45">45</a>], ABB [<a href="#4">4</a>], and Siemens [<a href="#146">146</a>], with some providing demo licences [<a href="#47">47</a>]. Open sourced options are also available, including RapidSCADA [<a href="#136">136</a>], OpenSCADA [<a href="#135">135</a>], and Tango [<a href="#38">38</a>]<br />
+   Common IT systems such as email servers [<a href="#96">96</a>], file share servers [<a href="#97">97</a>], and update servers [<a href="#94">94</a>] can be deployed.<br />
+   Bespoke software packages to interface with DMZ is required and can be done with Schneider's ClearSCADA for example, which can be accessed via a web-interface, or with a client application [<a href="#45">45</a>]. Simulated alternatives are available [<a href="#69">69</a>].</p>
+	<span class="showHide" onClick="$('#ics').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="ics">
+	  <a id="2" href="https://new.abb.com/plc/control-panels">[2] ABB. CP600 control panels platform. </a><br />
+	  <a id="3" href="https://new.abb.com/plc/programmable-logic-controllers-plcs">[3] ABB. Programmable Logic ControllersPLCs. </a><br />
+	  <a id="4" href="https://new.abb.com/network-management/network-management/microscada-x/sys600">[4] ABB. SCADA: MicroSCADA X SYS600.</a><br />
+	  <a id="10" href="https://www.arduino.cc">[10] Arduino. Arduino. </a><br />
+	  <a id="14" href="https://beagleboard.org/">[14] Beagle Board. BeagleBoard.org - community supported open hardware computers for making. </a><br />
+	  <a id="28" href="https://www.cisco.com/c/en/us/td/docs/solutions/Verticals/Industrial{_}Automation/IA{_}Horizontal/DG/Industrial-AutomationDG/Industrial-AutomationDG.html">[28] Cisco. Networking and Security in Industrial Automation Environments. </a><br />
+	  <a id="33" href="https://pypi.org/project/python-cip/">[33] Fabio Comuni. python-cip 0.0.4. </a><br />
+	  <a id="38" href="https://www.tango-controls.org/about-us/">[38] Tango Controls. About Us. </a><br />
+	  <a id="45" href="https://www.se.com/uk/en/product-range-presentation/61264-clearscada/?filter=business-1-industrial-automation-and-control">[45] Schneider Electric. ClearSCADA.</a><br />
+	  <a id="46" href="https://www.se.com/ww/en/work/solutions/for-business/electric-utilities/controllers-and-remote-terminal-units/">[46] Schneider Electric. Controllers & Remote TerminalUnits (RTU). </a><br />
+	  <a id="47" href="https://tprojects.schneider-electric.com/telemetry/display/public/CS/Geo+SCADA+Expert+Downloads">[47] Schneider Electric. Geo SCADA Expert Downloads.</a><br />
+	  <a id="48" href="https://www.se.com/ww/en/product-category/2100-human-machine-interfaces-%28hmi%29/">[48] Schneider Electric. Human Machine Interfaces (HMI).</a><br />
+	  <a id="51" href="https://factoryio.com/">[51] factoryio. Next-Gen PLC Training: 3D Factory Simulation. </a><br />
+	  <a id="55" href="https://www.fischertechnik.de/en/products/simulating/training-models">[55] fischertechnik. Training models. </a><br />
+	  <a id="56"></a>[56] David Formby, Milad Rad, and Raheem Beyah. Lowering the barriers to industrial control system securitywith {GRFICS}. In 2018 {USENIX} Workshop onAdvances in Security Education ({ASE} 18), 2018.<br />
+	  <a id="65" href="https://www.gunt.de/index.php?option=com_gunt&task=gunt.list.category&lang=en&category_id=256&level=3">[65] Gunt. Physical / chemical water treatment.</a><br />
+	  <a id="69" href="https://www.inetsim.org/about.html">[69] Thomas Hungenberg and Matthias Eckert. Aboutthe INetSim project . </a><br />
+	  <a id="70" href="https://pymodbus.readthedocs.io/en/latest/readme.html">[70] Petrak Hynek. PyModbus - A Python ModbusStack. </a><br />
+	  <a id="77"></a>[77] Kaspersky Labs. Establishing Zones and Conduits.Technical report, 2018.<br />
+	  <a id="79" href="https://www.kepware.com/en-us/products/kepserverex/1">[79] Kepware. KEPServerEX: Connects disparatedevices and applications from plant controlsystems to enterprise information systems.</a><br />
+	  <a id="85" href="https://pypi.org/project/paho-mqtt/">[85] Roger Light. paho-mqtt 1.5.0. </a><br />
+	  <a id="94" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-server-update-services/deploy/deploy-windows-server-update-services">[94] Microsoft. Deploy Windows Server UpdateServices. </a><br />
+	  <a id="96" href="https://docs.microsoft.com/en-us/exchange/plan-and-deploy/deploy-new-installations/install-mailbox-role?view=exchserver-2019">[96] Microsoft. Install Exchange Mailboxservers using the Setup wizard. </a><br />
+	  <a id="97" href="https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview">[97] Microsoft. Overview of file sharing using the SMB 3 protocol in Windows Server.</a><br />
+	  <a id="98" href="https://python-snap7.readthedocs.io/en/latest/">[98] Gijs Molenaar and Stephen Preeker. Welcometo python-snap7â€™s documentation! </a><br />
+	  <a id="102" href="https://pypi.org/project/pydnp3/">[102] Anh Nguyen. pydnp3 0.1.0. </a><br />
+	  <a id="110" href="https://python-opcua.readthedocs.io/en/latest/">[110] Oroulet. Python OPC-UA Documentation. </a><br />
+	  <a id="111" href="https://www.osisoft.com/pi-system/#tab1">[111] OSISoft. PI System: From data to knowledge to transformation. </a><br />
+	  <a id="115" href="https://www.raspberrypi.org">[115] Raspberry Pi. Teach Learn and Make with RaspberryPi. </a><br />
+	  <a id="116" href="https://www.intelligentplant.com/howitworks">[116] Intelligent Plant. How you Connect to the IndustrialApp Store. </a><br />
+	  <a id="118" href="https://www.profibus.com/">[118] Profibus. Profibus. </a><br />
+	  <a id="121" href="https://www.ptc.com/en/products/iiot/thingworx-platform">[121] PTC. ThingWorx Industrial IoT Solutions Platform. </a><br />
+	  <a id="127"></a>[127] Andres Robles-Durazno, Naghmeh Moradpoor, JamesMcWhinnie, Gordon Russell, and Inaki Maneru-Marin.PLC memory attack detection and response in a cleanwater supply system. International Journal of CriticalInfrastructure Protection, 26:100300, 2019.<br />
+	  <a id="128" href="https://www.rockwellautomation.com/global/products/factorytalk/overview.page?pagetitle=FactoryTalk-View-Site-Edition&docid=fbfaf09e608b1c3a74b3d7d0f95bd25e">[128] Rockwell. FactoryTalk View Site Edition. </a><br />
+	  <a id="129" href="https://www.rockwellautomation.com/global/products/factorytalk/overview.page?pagetitle=HMI-Software&docid=f1cf341cf405c5cd5d96311862a495f1">[129] Rockwell. HMI Software: FactoryTalkView Software Serves Up Real-timePerformance Information. </a><br />
+	  <a id="130" href="https://www.rockwellautomation.com/en_UK/products/human-machine-interface/overview.page">[130] Rockwell. Human Machine Interface: Visualization for Smart Manufacturing. </a><br />
+	  <a id="131" href="https://ab.rockwellautomation.com/Programmable-Controllers">[131] Rockwell. Programmable Controllers.</a><br />
+	  <a id="135" href="http://oscada.org/main/about-the-project/">[135] Roman Savochenko. Open SCADA. </a><br />
+	  <a id="136" href="https://rapidscada.org/projects/">[136] Rapid SCADA. Rapid SCADA. </a><br />
+	  <a id="142" href="https://mall.industry.siemens.com/mall/en/uk/Catalog/Product/6AV6651-7KA02-3AA4">[142] Siemens. 6AV6651-7KA02-3AA4. </a><br />
+	  <a id="143" href="https://new.siemens.com/global/en/products/automation/simatic-hmi/panels.html">[143] Siemens. Machine level visualization withSIMATIC HMI. </a><br />
+	  <a id="145" href="https://new.siemens.com/global/en/products/automation/systems/industrial/plc.html">[145] Siemens. SIMATIC Controller â€“ Take control ofthe future. </a><br />
+	  <a id="146" href="https://new.siemens.com/global/en/products/automation/industry-software/automation-software/scada/simatic-wincc-oa.html">[146] Siemens. SIMATIC WinCC Open Architecture. </a><br />
+	  <a id="147" href="https://new.siemens.com/global/en/products/automation/industry-software/automation-software/scada/simatic-wincc-v7.html">[147] Siemens. SIMATIC WinCC V7.</a><br />
+	  <a id="154"></a>[154] K. Stouffer, V. Pillitteri, S. Lightman, M. Abrams, andA. Hahn. Guide to Industrial Control Systems (ICS)Security. Technical report, 2015.<br />
+	  <a id="162" href="https://www.newelectronics.co.uk/electronics/rs-launches-allen-bradley-plc-starter-kits-for-machine-and-motion-control-systems/222890/">[162] Neil Tyler. RS launches Allen-Bradley PLC starterkits for machine and motion control systems. </a>
+	 </p>
+   
+   <h2>Building Management System</h2>
+    <p>Physical elements can be deployed as large-scale real-world systems [<a href="#53">53</a>], scaled down replications [<a href="#54">54</a>], or simulated using libraries [<a href="#118">118</a>, <a href="#122">122</a>, <a href="#124">124</a>, <a href="#175">175</a>].<br />
+Physical devices can be procured from vendors including Honeywell [<a href="#68">68</a>], Trend Controls [<a href="#159">159</a>], Vykon [<a href="#171">171</a>], Reliable Controls [<a href="#37">37</a>], Siemens [<a href="#144">144</a>], and Schneider [<a href="#49">49</a>].<br />
+Controllers can be self-developed using microcontroller development boards/single board computers [<a href="#10">10</a>, <a href="#14">14</a>, <a href="#115">115</a>], or virtualised using protocol libraries such as Profibus [<a href="#118">118</a>], BACNet [<a href="#13">13</a>], and KNX [<a href="#83">83</a>]).<br />
+Supervisory server software is available [<a href="#36">36</a>, <a href="#160">160</a>], as well as historian software [<a href="#34">34</a>], and engineering workstations software [<a href="#35">35</a>].<br />
+Multi-protocol solutions such as Tridium's Niagara Fox [<a href="#161">161</a>] may also provide value.</p>
+	<span class="showHide" onClick="$('#bms').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="bms">
+	  <a id="10" href="https://www.arduino.cc">[10] Arduino. Arduino. </a><br />
+	  <a id="13" href="http://www.bacnet.org/Developer/">[13] BACNet. BACNet: Developer help. </a><br />
+	  <a id="14" href="https://beagleboard.org/">[14] Beagle Board. BeagleBoard.org - community supported open hardware computers for making. </a><br />
+	  <a id="34" href="https://www.reliablecontrols.com/products/software/RCAR/">[34] Reliable Controls. RC-Archive. </a><br />
+	  <a id="35" href="https://www.reliablecontrols.com/products/software/RCST/">[35] Reliable Controls. RC-Studio. </a><br />
+	  <a id="36" href="https://www.reliablecontrols.com/products/software/RCWV/">[36] Reliable Controls. RC-WebView. </a><br />
+	  <a id="37" href="https://www.reliablecontrols.com/">[37] Reliable Controls. Reliable Controls | Internet-Connected Building Controls. </a><br />
+	  <a id="49" href="https://www.se.com/ww/en/product-category/1200-building-management/">[49] Schneider Electric. Schneider ElectricGlobal: Building Management. </a><br />
+	  <a id="53" href="https://www.broughtoneap.co.uk/products/">[53] Fischertechnik. Electro Air Products | Broughton EAP.</a><br />
+	  <a id="54" href="https://www.fischertechnik.de/en/products/teaching/stem-robotics/548884-starter-set-for-micro-bit">[54] Fischertechnik. Starter Set for micro:bit - fischertechnik. </a><br />
+	  <a id="68" href="https://buildingcontrols.honeywell.com/subcategory/Building-Automation-Systems">[68] Honeywell. Building Automation Systems | honeywell building controls commercial hvac solutions.</a><br />
+	  <a id="83" href="https://www.knx.org/knx-en/for-professionals/get-started/knx-virtual/">[83] KNX. KNX Virtual. </a><br />
+	  <a id="115" href="https://www.raspberrypi.org">[115] Raspberry Pi. Teach Learn and Make with RaspberryPi. </a><br />
+	  <a id="118" href="https://www.profibus.com/">[118] Profibus. Profibus. </a><br />
+	  <a id="122" href="https://pypi.org/project/pyprofibus/">[122] PyProfibus. pyprofibus. </a><br />
+	  <a id="124" href="https://python-can.readthedocs.io/en/2.1.0/">[124] Python-CAN. python-can. </a><br />
+	  <a id="144" href="https://www.siemens.com/building-automation-systems">[144] Siemens. Siemens: Building automation and control systems | Building technology. </a><br />
+	  <a id="159" href="http://www.trendcontrols.com/">[159] TrendControls. TrendControls: HVAC Controls | Building Energy Management Systems. </a><br />
+	  <a id="160" href="https://partners.trendcontrols.com/trendproducts/cd/en/ecatdata/pg_gr-iqv.html">[160] TrendControls. TrendControls: IQ Vision Supervisor. </a><br />
+	  <a id="161" href="https://www.tridium.com">[161] Tridium. Tridium | Harness the power of the Internetof Things with Niagara. </a><br />
+	  <a id="171" href="https://www.vykon.com/">[171] Vykon. VYKON | Open intelligent building controlsolutions built on the Niagara Framework. </a><br />
+	  <a id="175" href="https://xbplib.readthedocs.io/en/latest/">[175] XBee. XBee Python Library. </a><br />
+	 </p>
+   
+   <h2>Internet of Things</h2>
+    <p>Physical devices can be procured from leading vendors including Yale [<a href="#176">176</a>], Nest [<a href="#61">61</a>], and Phillips [<a href="#114">114</a>], or can be self-developed using open source kits [<a href="#107">107</a>].<br />
+Commercial virtualised options are also available from Amazon [<a href="#7">7</a>] and Microsoft [<a href="#90">90</a>].<br />
+There exist commercial [<a href="#133">133</a>, <a href="#141">141</a>] and open source [<a href="#109">109</a>] solutions supporting a variety IoT communication protocols.<br />
+Simulation of these is also achievable through commercial products [<a href="#156">156</a>] or programming libraries [<a href="#117">117</a>].<br />
+Implementation of applications can be done with commercial [<a href="#134">134</a>] or open source solutions [<a href="#106">106</a>], or can be self-developed using libraries [<a href="#86">86</a>].<br />
+Virtualisation solutions are also available [<a href="#71">71</a>].</p>
+	<span class="showHide" onClick="$('#iot').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="iot">
+	  <a id="6"></a>[6] Ala Al-Fuqaha, Mohsen Guizani, Mehdi Mohammadi,Mohammed Aledhari, and Moussa Ayyash. Internet ofThings: A Survey on Enabling Technologies, Protocols,and Applications. IEEE Communications Surveys andTutorials, 17(4):2347–2376, 2015.<br />
+	  <a id="7" href="https://aws.amazon.com/solutions/implementations/iot-device-simulator/">[7] Amazon. Amazon AWS IoT Device Simulator. </a><br />
+	  <a id="8"></a>[8] Kenneth Li Minn Ang and Jasmine Kah Phooi Seng.Application Specific Internet of Things (ASIoTs): Taxonomy, Applications, Use Case and Future Directions.IEEE Access, 7:56577–56590, 2019.<br />
+	  <a id="19"></a>[19] Yassine Chahid, Mohamed Benabdellah, and Abdelmalek Azizi. Internet of things security. 2017 International Conference on Wireless Technologies, Embedded and Intelligent Systems, WITS 2017, 2017.<br />
+	  <a id="61" href="https://store.google.com/gb/product/nest_protect_2nd_gen">[61] Google Nest. Fire and Smoke Detection. </a><br />
+	  <a id="71" href="https://iotify.io/iot-network-simulator/">[71] IOTIFY. IoT Application Simulation. </a><br />
+	  <a id="75" href="https://www.juniper.net/documentation/en_US/junos-space-apps/network-director3.2/topics/concept/wireless-80211.html">[75] Juniper Networks. Understanding the IEEE802.11 Standard for Wireless Networks.</a><br />
+	  <a id="86" href="https://pypi.org/project/paho-mqtt/">[86] Light Roger. Python MQTT Implementation. </a><br />
+	  <a id="90" href="https://www.azureiotsolutions.com/Accelerators#description/device-simulation">[90] Microsoft. Azure IoT Device Simulation. </a><br />
+	  <a id="106" href="https://www.openhab.org/">[106] OpenHab. Smart Home Automation. </a><br />
+	  <a id="107" href="https://opensource.com/article/17/12/how-build-custom-iot-hardware-arduino">[107] OpenSource. How to Build CustomIoT Hardware With Arduino. </a><br />
+	  <a id="109" href="http://www.openzwave.com/">[109] OpenZwave. Open Source Zwave Gateway. </a><br />
+	  <a id="114" href="https://www2.meethue.com/">[114] Phillips. Smart Lighting. </a><br />
+	  <a id="117" href="https://pypi.org/project/python-zwave/">[117] Prag Micke. Python3 Zwave Implementation. </a><br />
+	  <a id="133" href="https://www.smartthings.com/gb/products/smartthings-hub">[133] Samsung. SmartThings Hub. </a><br />
+	  <a id="134" href="https://www.smartthings.com/uk">[134] Samsung. Smart Home Automation. </a><br />
+	  <a id="141" href="https://new.siemens.com/global/en/company/sustainability/education/sce/iot2000.html">[141] Siemens. Siemens IoT2040 Intelligent Gateway.</a><br />
+	  <a id="150" href="https://www.silabs.com/products/wireless/mesh-networking/z-wave/specification">[150] Silicon Labs. Z-Wave Specification. </a><br />
+	  <a id="156" href="https://tetcos.com/blog/2017/08/29/iot-netsim/">[156] Tetcos. Simulate Internet of Things Using NetSim. </a><br />
+	  <a id="176" href="https://www.yale.co.uk/en/yale/couk/smart-living/">[176] Yale. Smart Home Security. </a>
+	 </p>
+   
+   <h2>Security Operations Center</h2>
+    <p>Endpoint detection solution include AT&T's AlienVault Unified Security Management [<a href="#12">12</a>], FireEye's Endpoint Security [<a href="#52">52</a>], or the more threat hunting oriented HELK which utilises the Elastic Stack [<a href="#104">104</a>, <a href="#132">132</a>].<br />
+	The network traffic can be passed to specialist devices capable of ICS protocol recognition [<a href="#21">21</a>, <a href="#32">32</a>, <a href="#57">57</a>, <a href="#58">58</a>].</p>
+	<span class="showHide" onClick="$('#soc').toggle();"><h3>Supporting References</h3></span>
+     <p class="implementation-options" id="soc">
+	  <a id="12" href="https://cybersecurity.att.com/solutions/endpoint-detection-and-response">[12] AT&T. Endpoint Detection and Response(EDR) | AlienVault | AT&T Cybersecurity.</a><br />
+	  <a id="21" href="https://www.checkpoint.com/trials/">[21] Check Point. Product Trials. </a><br />
+	  <a id="32" href="https://www.claroty.com">[32] Claroty. Claroty. </a><br />
+	  <a id="52" href="https://www.fireeye.com/solutions/hx-endpoint-security-products.html">[52] FireEye. Endpoint Security Software and Solutions| FireEye. </a><br />
+	  <a id="57" href="https://www.fortinet.com/">[57] Fortinet. Fortinet | Deliver Network Security DigitalTransformation. </a><br />
+	  <a id="58" href="https://www.dragos.com/platform/">[58] Fortinet. The Dragos Industrial Cybersecurity Platform| Dragos. </a><br />
+	  <a id="104" href="https://www.elastic.co">[104] Elastic NV. Elastic Products: Search Analytics Logging and Security | Elastic. </a><br />
+	  <a id="132" href="https://github.com/Cyb3rWard0g/HELK/">[132] Rodriguez R. HELK. </a><br />
+	 </p>
+   
+  <h1>Remote Access Layer</h1>
+   <p>Based on the size and access requirements, a <i>Remote Access Layer</i> can be implemented to accommodate interconnectivity between external experimental zones (e.g. partner organisations, mobile facilities, and remote worker simulation), external <i>User Layer</i> access, and remote <i>Management Layer</i> access.</p>
+   
+  <!--
+  <h1>All References</h1>
+   <p>
+	<a id="1" href="https://www.perimeter81.com/">[1] Perimeter 81. Transforming Secure Access for the Remote Workforce.</a><br />
+	<a id="2" href="https://new.abb.com/plc/control-panels">[2] ABB. CP600 control panels platform. </a><br />
+	<a id="3" href="https://new.abb.com/plc/programmable-logic-controllers-plcs">[3] ABB. Programmable Logic ControllersPLCs. </a><br />
+	<a id="4" href="https://new.abb.com/network-management/network-management/microscada-x/sys600">[4] ABB. SCADA: MicroSCADA X SYS600.</a><br />
+	<a id="5" href="https://ghidra-sre.org/">[5] National Security Agency. GHIDRA. </a><br />
+	<a id="6"></a>[6] Ala Al-Fuqaha, Mohsen Guizani, Mehdi Mohammadi,Mohammed Aledhari, and Moussa Ayyash. Internet ofThings: A Survey on Enabling Technologies, Protocols,and Applications. IEEE Communications Surveys andTutorials, 17(4):2347–2376, 2015.<br />
+	<a id="7" href="https://aws.amazon.com/solutions/implementations/iot-device-simulator/">[7] Amazon. Amazon AWS IoT Device Simulator. </a><br />
+	<a id="8"></a>[8] Kenneth Li Minn Ang and Jasmine Kah Phooi Seng.Application Specific Internet of Things (ASIoTs): Taxonomy, Applications, Use Case and Future Directions.IEEE Access, 7:56577–56590, 2019.<br />
+	<a id="9"></a>[9] Uchenna D Ani, Jeremy M Watson, Benjamin Green,Barnaby Craggs, and Jason Nurse. Design considerations for building credible security testbeds: A systematic study of industrial control system use cases. arXivpreprint arXiv:1911.01471, 2019.<br />
+	<a id="10" href="https://www.arduino.cc">[10] Arduino. Arduino. </a><br />
+	<a id="11"></a>[11] Aditya Ashok, Adam Hahn, and Manimaran Govindarasu. A cyber-physical security testbed for smartgrid: System architecture and studies. In Proceedingsof the Seventh Annual Workshop on Cyber Security andInformation Intelligence Research, pages 1–1, 2011.<br />
+	<a id="12" href="https://cybersecurity.att.com/solutions/endpoint-detection-and-response">[12] AT&T. Endpoint Detection and Response(EDR) | AlienVault | AT&T Cybersecurity.</a><br />
+	<a id="13" href="http://www.bacnet.org/Developer/">[13] BACNet. BACNet: Developer help. </a><br />
+	<a id="14" href="https://beagleboard.org/">[14] Beagle Board. BeagleBoard.org - community supported open hardware computers for making. </a><br />
+	<a id="15"></a>[15] BSI. 61508-1:2010: Functional Safety of Electrical/Electronic/ Programmable Electronic SafetyRelated Systems. Technical report, 2010.<br />
+	<a id="16"></a>[16] BSI. 62061-1:2010: Guidance on the Application ofISO 13849-1 and IEC 62061 in the Design of Safety Related Control Systems for Machinery. Technicalreport, 2010.<br />
+	<a id="17"></a>[17] BSI. 13849-1:2015: Safety of Machinery - SafetyRelated Parts of Control Systems - Part 1: GeneralPrinciples for Design. Technical report, 2015.<br />
+	<a id="18"></a>[18] R. Candell, T. Zimmerman, and K. Stouffer. An industrial control system cybersecurity performance testbed.National Institute of Standards and Technology. NISTIR, 8089, 2015.<br />
+	<a id="19"></a>[19] Yassine Chahid, Mohamed Benabdellah, and Abdelmalek Azizi. Internet of things security. 2017 International Conference on Wireless Technologies, Embedded and Intelligent Systems, WITS 2017, 2017.<br />
+	<a id="20" href="https://www.checkpoint.com/products/intrusion-prevention-system-ips/">[20] Check Point. Intrusion Prevention System(IPS). </a><br />
+	<a id="21" href="https://www.checkpoint.com/trials/">[21] Check Point. Product Trials. </a><br />
+	<a id="22"></a>[22] H. Christiansson and E. Luiijf. Creating a europeanscada security testbed. In International Conferenceon Critical Infrastructure Protection, pages 237–247.Springer, 2007.<br />
+	<a id="23"></a>[23] Pierre Ciholas, Aidan Lennie, Parvin Sadigova, andJose M Such. The security of smart buildings: a systematic literature review. arXiv preprint arXiv:1901.05837,2019.<br />
+	<a id="24"></a>[24] M.H. Cintuglu, O.A. Mohammed, K. Akkaya, and A.S.Uluagac. A survey on smart grid cyber-physical systemtestbeds. IEEE Communications Surveys & Tutorials,19(1):446–464, 2017.<br />
+	<a id="25" href="https://www.cisco.com/c/dam/en/us/td/docs/security/small_business_security/isa500/technical_reference/hub-spoke/isa500_an_hub-spoke.pdf">[25] Cisco. Configuring a Hub-and-Spoke Site-to-SiteVPN with Cisco ISA500 Series Security Appliances.</a><br />
+	<a id="26" href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_ldap/configuration/15-mt/sec-usr-ldap-15-mt-book/sec_conf_ldap.html">[26] Cisco. AAA LDAP Configuration Guide. Cisco IOS Release 15M&T. </a><br />
+	<a id="27" href="https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-switches/10570-41.html">[27] Cisco. Catalyst Switched Port Analyzer(SPAN) Configuration Example. </a><br />
+	<a id="28" href="https://www.cisco.com/c/en/us/td/docs/solutions/Verticals/Industrial{_}Automation/IA{_}Horizontal/DG/Industrial-AutomationDG/Industrial-AutomationDG.html">[28] Cisco. Networking and Security in Industrial Automation Environments. </a><br />
+	<a id="29" href="https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/5_x/nx-os/unicast/configuration/guide/l3_cli_nxos/l3_route.html">[29] Cisco. Chapter: Configuring Static Routing. </a><br />
+	<a id="30" href="https://www.netacad.com/courses/packet-tracer">[30] Cisco. Cisco Packet Tracer. </a><br />
+	<a id="31" href="https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html">[31] Cisco. Configuring IP Access Lists.</a><br />
+	<a id="32" href="https://www.claroty.com">[32] Claroty. Claroty. </a><br />
+	<a id="33" href="https://pypi.org/project/python-cip/">[33] Fabio Comuni. python-cip 0.0.4. </a><br />
+	<a id="34" href="https://www.reliablecontrols.com/products/software/RCAR/">[34] Reliable Controls. RC-Archive. </a><br />
+	<a id="35" href="https://www.reliablecontrols.com/products/software/RCST/">[35] Reliable Controls. RC-Studio. </a><br />
+	<a id="36" href="https://www.reliablecontrols.com/products/software/RCWV/">[36] Reliable Controls. RC-WebView. </a><br />
+	<a id="37" href="https://www.reliablecontrols.com/">[37] Reliable Controls. Reliable Controls | Internet-Connected Building Controls. </a><br />
+	<a id="38" href="https://www.tango-controls.org/about-us/">[38] Tango Controls. About Us. </a><br />
+	<a id="39" href="https://www.cpni.gov.uk/physical-security">[39] CPNI. Physical Security. </a><br />
+	<a id="40"></a>[40] B. Craggs, A. Rashid, C. Hankin, R. Antrobus,O. S, erban, and N. Thapen. A reference architecturefor iiot and industrial control systems testbeds. In 2ndConference on Living in the Internet of Things 2019,United Kingdom, 2018. Institution of Engineering andTechnology (IET).<br />
+	<a id="41"></a>[41] C.M. Davis, J.E. Tate, H. Okhravi, C. Grier, T.J. Overbye, and D. Nicol. Scada cyber security testbed development. In 2006 38th North American Power Symposium, pages 483–488. IEEE, 2006.<br />
+	<a id="42"></a>[42] Brian Desmond, Joe Richards, Robbie Allen, and Alistair G Lowe-Norris. Active Directory: Designing,Deploying, and Running Active Directory. " O’ReillyMedia, Inc.", 2008.<br />
+	<a id="43" href="https://www.drobo.com/storage-products/b810i/">[43] Drobo. Drobo B810i. </a><br />
+	<a id="44" href="https://www.drobo.com/storage-products/b810n/">[44] Drobo. Drobo B810n. </a><br />
+	<a id="45" href="https://www.se.com/uk/en/product-range-presentation/61264-clearscada/?filter=business-1-industrial-automation-and-control">[45] Schneider Electric. ClearSCADA.</a><br />
+	<a id="46" href="https://www.se.com/ww/en/work/solutions/for-business/electric-utilities/controllers-and-remote-terminal-units/">[46] Schneider Electric. Controllers & Remote TerminalUnits (RTU). </a><br />
+	<a id="47" href="https://tprojects.schneider-electric.com/telemetry/display/public/CS/Geo+SCADA+Expert+Downloads">[47] Schneider Electric. Geo SCADA Expert Downloads.</a><br />
+	<a id="48" href="https://www.se.com/ww/en/product-category/2100-human-machine-interfaces-%28hmi%29/">[48] Schneider Electric. Human Machine Interfaces (HMI).</a><br />
+	<a id="49" href="https://www.se.com/ww/en/product-category/1200-building-management/">[49] Schneider Electric. Schneider ElectricGlobal: Building Management. </a><br />
+	<a id="50" href="https://www.electrical-installation.org/enwiki/Wiring_recommendations">[50] Electrical-installation.org. Wiring Recommendations.</a><br />
+	<a id="51" href="https://factoryio.com/">[51] factoryio. Next-Gen PLC Training: 3D Factory Simulation. </a><br />
+	<a id="52" href="https://www.fireeye.com/solutions/hx-endpoint-security-products.html">[52] FireEye. Endpoint Security Software and Solutions| FireEye. </a><br />
+	<a id="53" href="https://www.broughtoneap.co.uk/products/">[53] Fischertechnik. Electro Air Products | Broughton EAP.</a><br />
+	<a id="54" href="https://www.fischertechnik.de/en/products/teaching/stem-robotics/548884-starter-set-for-micro-bit">[54] Fischertechnik. Starter Set for micro:bit - fischertechnik. </a><br />
+	<a id="55" href="https://www.fischertechnik.de/en/products/simulating/training-models">[55] fischertechnik. Training models. </a><br />
+	<a id="56"></a>[56] David Formby, Milad Rad, and Raheem Beyah. Lowering the barriers to industrial control system securitywith {GRFICS}. In 2018 {USENIX} Workshop onAdvances in Security Education ({ASE} 18), 2018.<br />
+	<a id="57" href="https://www.fortinet.com/">[57] Fortinet. Fortinet | Deliver Network Security DigitalTransformation. </a><br />
+	<a id="58" href="https://www.dragos.com/platform/">[58] Fortinet. The Dragos Industrial Cybersecurity Platform| Dragos. </a><br />
+	<a id="59"></a>[59] Joseph Gardiner, Barnaby Craggs, Benjamin Green,and Awais Rashid. Oops i did it again: further adventures in the land of ics security testbeds. In Proceedings of the ACM Workshop on Cyber-Physical SystemsSecurity & Privacy, pages 75–86, 2019.<br />
+	<a id="60"></a>[60] Annarita Giani, Gabor Karsai, Tanya Roosta, AakashShah, Bruno Sinopoli, and Jon Wiley. A testbed for secure and robust scada systems. ACM SIGBED Review,5(2):1–4, 2008.<br />
+	<a id="61" href="https://store.google.com/gb/product/nest_protect_2nd_gen">[61] Google Nest. Fire and Smoke Detection. </a><br />
+	<a id="62"></a>[62] Benjamin Green, Sylvain Andre Francis Frey, AwaisRashid, and David Hutchison. Testbed diversity asa fundamental principle for effective ics security research. Serecin, 2016.<br />
+	<a id="63"></a>[63] Benjamin Green, Anhtuan Lee, Rob Antrobus, UtzRoedig, David Hutchison, and Awais Rashid. Pains,gains and plcs: ten lessons from building an industrialcontrol systems testbed for security research. In 10th{USENIX} Workshop on Cyber Security Experimentation and Test ({CSET} 17), 2017.<br />
+	<a id="64" href="http://bit.ly/2raojOf">[64] A. Greenberg. ’crash override’: The malware that tookdown a power grid. WiredMagazine, retrieved, pages 09–20, 2017.</a><br />
+	<a id="65" href="https://www.gunt.de/index.php?option=com_gunt&task=gunt.list.category&lang=en&category_id=256&level=3">[65] Gunt. Physical / chemical water treatment.</a><br />
+	<a id="65"></a>[66] Stephen Hilt, Federico Maggi, Perine Charles, RemorinLord, Martin Rösler, and Rainer Vosseler. Caught in theAct: Running a Realistic Factory Honeypot to CaptureReal Threats. Technical report, 2020.<br />
+	<a id="67"></a>[67] H. Holm, M. Karresand, A. Vidström, and E. Westring.A survey of industrial control system testbeds. InNordic Conference on Secure IT Systems, pages 11–26. Springer, 2015.<br />
+	<a id="68" href="https://buildingcontrols.honeywell.com/subcategory/Building-Automation-Systems">[68] Honeywell. Building Automation Systems | honeywell building controls commercial hvac solutions.</a><br />
+	<a id="69" href="https://www.inetsim.org/about.html">[69] Thomas Hungenberg and Matthias Eckert. Aboutthe INetSim project . </a><br />
+	<a id="70" href="https://pymodbus.readthedocs.io/en/latest/readme.html">[70] Petrak Hynek. PyModbus - A Python ModbusStack. </a><br />
+	<a id="71" href="https://iotify.io/iot-network-simulator/">[71] IOTIFY. IoT Application Simulation. </a><br />
+	<a id="72"></a>[72] William Jardine, Sylvain Frey, Benjamin Green, andAwais Rashid. Senami: Selective non-invasive activemonitoring for ics intrusion detection. In Proceedingsof the 2nd ACM Workshop on Cyber-Physical SystemsSecurity and Privacy, pages 23–34, 2016.<br />
+	<a id="73" href="https://www.fireeye.com/blog/threat-research/2017/12/attackers-deploy-new-ics-attack-framework-triton.html">[73] B. Johnson, D. Caban, M. Krotofil, D. Scali,N. Brubaker, and C. Glyer. Attackers Deploy New ICS Attack Framework “TRITON”and Cause Operational Disruption to CriticalInfrastructure. 2017.</a><br />
+	<a id="74" href="https://www.juniper.net/documentation/en_US/junos/topics/concept/port-mirroring-ex-series-l2.html">[74] Juniper. Understanding Port MirroringAnalyzers. </a><br />
+	<a id="75" href="https://www.juniper.net/documentation/en_US/junos-space-apps/network-director3.2/topics/concept/wireless-80211.html">[75] Juniper Networks. Understanding the IEEE802.11 Standard for Wireless Networks.</a><br />
+	<a id="76"></a>[76] Kaspersky Lab ICS CERT. Threat Landscape for Industrial Automation Systems. Technical report, 2019.<br />
+	<a id="77"></a>[77] Kaspersky Labs. Establishing Zones and Conduits.Technical report, 2018.<br />
+	<a id="78"></a>[78] Georgios Kavallieratos, Sokratis K Katsikas, andVasileios Gkioulos. Towards a cyber-physical range.In Proceedings of the 5th on Cyber-Physical SystemSecurity Workshop, pages 25–34, 2019.<br />
+	<a id="79" href="https://www.kepware.com/en-us/products/kepserverex/1">[79] Kepware. KEPServerEX: Connects disparatedevices and applications from plant controlsystems to enterprise information systems.</a><br />
+	<a id="80"></a>[80] Joonsoo Kim, Kyeongho Kim, and Moonsu Jang.Cyber-physical battlefield platform for large-scale cybersecurity exercises. In 2019 11th International Conference on Cyber Conflict (CyCon), volume 900, pages1–19. IEEE, 2019.<br />
+	<a id="81"></a>[81] E.D. Knapp and J.T. Langill. Industrial Network Security: Securing critical infrastructure networks forsmart grid, SCADA, and other Industrial Control Systems. Syngress, 2014.<br />
+	<a id="82"></a>[82] W. Knowles, D. Prince, D. Hutchison, J.F.P. Disso, andK. Jones. A survey of cyber security management inindustrial control systems. International journal ofcritical infrastructure protection, 9:52–80, 2015.<br />
+	<a id="83" href="https://www.knx.org/knx-en/for-professionals/get-started/knx-virtual/">[83] KNX. KNX Virtual. </a><br />
+	<a id="84"></a>[84] Yong Li and Min Chen. Software-defined networkfunction virtualization: A survey. IEEE Access, 3:2542–2553, 2015.<br />
+	<a id="85" href="https://pypi.org/project/paho-mqtt/">[85] Roger Light. paho-mqtt 1.5.0. </a><br />
+	<a id="86" href="https://pypi.org/project/paho-mqtt/">[86] Light Roger. Python MQTT Implementation. </a><br />
+	<a id="87"></a>[87] A.P. Mathur and N.O. Tippenhauer. Swat: a water treatment testbed for research and training on ics security.In 2016 International Workshop on Cyber-physicalSystems for Smart Water Networks (CySWater), pages31–36. IEEE, 2016.<br />
+	<a id="88"></a>[88] Peter Maynard, Kieran McLaughlin, and Sakir Sezer.An open framework for deploying experimental scadatestbed networks. In 5th International Symposium forICS & SCADA Cyber Security Research 2018 5, pages92–101, 2018<br />
+	<a id="89" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/">[89] Microsoft. Hyper-V on Windows 10. </a><br />
+	<a id="90" href="https://www.azureiotsolutions.com/Accelerators#description/device-simulation">[90] Microsoft. Azure IoT Device Simulation. </a><br />
+	<a id="91" href="https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access">[91] Microsoft. Remote Desktop - Allow access to your PC. </a><br />
+	<a id="92" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">[92] Microsoft. Installation of OpenSSH For Windows Server 2019 and Windows 10. </a><br />
+	<a id="93" href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/basic-firewall-policy-design">[93] Microsoft. Basic Firewall Policy Design. </a><br />
+	<a id="94" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-server-update-services/deploy/deploy-windows-server-update-services">[94] Microsoft. Deploy Windows Server UpdateServices. </a><br />
+	<a id="95" href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools">[95] Microsoft. Download Debugging Tools forWindows. </a><br />
+	<a id="96" href="https://docs.microsoft.com/en-us/exchange/plan-and-deploy/deploy-new-installations/install-mailbox-role?view=exchserver-2019">[96] Microsoft. Install Exchange Mailboxservers using the Setup wizard. </a><br />
+	<a id="97" href="https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview">[97] Microsoft. Overview of file sharing using the SMB 3 protocol in Windows Server.</a><br />
+	<a id="98" href="https://python-snap7.readthedocs.io/en/latest/">[98] Gijs Molenaar and Stephen Preeker. Welcometo python-snap7â€™s documentation! </a><br />
+	<a id="99" href="https://www.nagios.org/about/">[99] Nagios. What Is Nagios? </a><br />
+	<a id="100" href="https://www.ncsc.gov.uk/collection/nis-directive?curPage=/collection/nis-directive/introduction-to-the-nis-directive">[100] National Cyber Security Centre. NCSCNIS Guidance. </a><br />
+	<a id="101" href="https://www.alfa.com.tw/products_detail/7.htm">[101] ALFA Network. AWUS036NHA. </a><br />
+	<a id="102" href="https://pypi.org/project/pydnp3/">[102] Anh Nguyen. pydnp3 0.1.0. </a><br />
+	<a id="103" href="https://www.nuand.com/bladerf-1/">[103] nuand. bladeRF. </a><br />
+	<a id="104" href="https://www.elastic.co">[104] Elastic NV. Elastic Products: Search Analytics Logging and Security | Elastic. </a><br />
+	<a id="105" href="https://opengear.com/results/serial-console-server">[105] opengear. Serial Console Servers. </a><br />
+	<a id="106" href="https://www.openhab.org/">[106] OpenHab. Smart Home Automation. </a><br />
+	<a id="107" href="https://opensource.com/article/17/12/how-build-custom-iot-hardware-arduino">[107] OpenSource. How to Build CustomIoT Hardware With Arduino. </a><br />
+	<a id="108" href="https://www.openstack.org/software/">[108] Openstack. Software. </a><br />
+	<a id="109" href="http://www.openzwave.com/">[109] OpenZwave. Open Source Zwave Gateway. </a><br />
+	<a id="110" href="https://python-opcua.readthedocs.io/en/latest/">[110] Oroulet. Python OPC-UA Documentation. </a><br />
+	<a id="111" href="https://www.osisoft.com/pi-system/#tab1">[111] OSISoft. PI System: From data to knowledge to transformation. </a><br />
+	<a id="112"></a>[112] Ben Paske, Benjamin Green, David Hutchison, andDaniel Prince. Design and construction of an industrial control system testbed. In PG Net-The 15th Annual PostGraduate Symposium on the Convergenceof Telecommunications, Networking and Broadcasting,2014.<br />
+	<a id="113" href="https://www.linkedin.com/pulse/post-game-analysis-s4x19-ics-detection-challenge-dale-peterson">[113] Dale Peterson. Post Game Analysis: S4x19 ICS Detection Challenge. </a><br />
+	<a id="114" href="https://www2.meethue.com/">[114] Phillips. Smart Lighting. </a><br />
+	<a id="115" href="https://www.raspberrypi.org">[115] Raspberry Pi. Teach Learn and Make with RaspberryPi. </a><br />
+	<a id="116" href="https://www.intelligentplant.com/howitworks">[116] Intelligent Plant. How you Connect to the IndustrialApp Store. </a><br />
+	<a id="117" href="https://pypi.org/project/python-zwave/">[117] Prag Micke. Python3 Zwave Implementation. </a><br />
+	<a id="118" href="https://www.profibus.com/">[118] Profibus. Profibus. </a><br />
+	<a id="119" href="https://profinetuniversity.com/functional-safety/safety-basics-machine-safety/">[119] Profinetuniversity.com. Industrial SafetyBasics-Machine Safety. </a><br />
+	<a id="120" href="https://profinetuniversity.com/functional-safety/safety-basics-conventional-vs-combined-safety/">[120] Profinetuniversity.com. Safety Basics â€“ Conventional vs Combined Safety. </a><br />
+	<a id="121" href="https://www.ptc.com/en/products/iiot/thingworx-platform">[121] PTC. ThingWorx Industrial IoT Solutions Platform. </a><br />
+	<a id="122" href="https://pypi.org/project/pyprofibus/">[122] PyProfibus. pyprofibus. </a><br />
+	<a id="123" href="https://www.python.org/about/">[123] Python. About. </a><br />
+	<a id="124" href="https://python-can.readthedocs.io/en/2.1.0/">[124] Python-CAN. python-can. </a><br />
+	<a id="125"></a>[125] Bradley Reaves and Thomas Morris. An open virtual testbed for industrial control system security research. International Journal of Information Security,11(4):215–229, 2012.<br />
+	<a id="126" href="http://www.rhyshaden.com/pwrsep.htm">[126] Rhyshaden.com. Power Separation Guidelines. </a><br />
+	<a id="127"></a>[127] Andres Robles-Durazno, Naghmeh Moradpoor, JamesMcWhinnie, Gordon Russell, and Inaki Maneru-Marin.PLC memory attack detection and response in a cleanwater supply system. International Journal of CriticalInfrastructure Protection, 26:100300, 2019.<br />
+	<a id="128" href="https://www.rockwellautomation.com/global/products/factorytalk/overview.page?pagetitle=FactoryTalk-View-Site-Edition&docid=fbfaf09e608b1c3a74b3d7d0f95bd25e">[128] Rockwell. FactoryTalk View Site Edition. </a><br />
+	<a id="129" href="https://www.rockwellautomation.com/global/products/factorytalk/overview.page?pagetitle=HMI-Software&docid=f1cf341cf405c5cd5d96311862a495f1">[129] Rockwell. HMI Software: FactoryTalkView Software Serves Up Real-timePerformance Information. </a><br />
+	<a id="130" href="https://www.rockwellautomation.com/en_UK/products/human-machine-interface/overview.page">[130] Rockwell. Human Machine Interface: Visualization for Smart Manufacturing. </a><br />
+	<a id="131" href="https://ab.rockwellautomation.com/Programmable-Controllers">[131] Rockwell. Programmable Controllers.</a><br />
+	<a id="132" href="https://github.com/Cyb3rWard0g/HELK/">[132] Rodriguez R. HELK. </a><br />
+	<a id="133" href="https://www.smartthings.com/gb/products/smartthings-hub">[133] Samsung. SmartThings Hub. </a><br />
+	<a id="134" href="https://www.smartthings.com/uk">[134] Samsung. Smart Home Automation. </a><br />
+	<a id="135" href="http://oscada.org/main/about-the-project/">[135] Roman Savochenko. Open SCADA. </a><br />
+	<a id="136" href="https://rapidscada.org/projects/">[136] Rapid SCADA. Rapid SCADA. </a><br />
+	<a id="137"></a>[137] W. Schwab and M. Poujol. The State of IndustrialCybersecurity 2018. Technical report, 2018.<br />
+	<a id="138" href="https://www.kali.org/about-us/">[138] Offensive Security. About Kali Linux. </a><br />
+	<a id="139"></a>[139] Alexandru Vlad Serbanescu, Sebastian Obermeier, andDer-Yeuan Yu. Ics threat analysis using a large-scalehoneynet. In 3rd International Symposium for ICS &SCADA Cyber Security Research 2015 (ICS-CSR 2015)3, pages 20–30, 2015.<br />
+	<a id="140" href="https://www.sewio.net/open-sniffer/">[140] sewio. Open Sniffer For 802.15.4 Zigbee 6lowpan.</a><br />
+	<a id="141" href="https://new.siemens.com/global/en/company/sustainability/education/sce/iot2000.html">[141] Siemens. Siemens IoT2040 Intelligent Gateway.</a><br />
+	<a id="142" href="https://mall.industry.siemens.com/mall/en/uk/Catalog/Product/6AV6651-7KA02-3AA4">[142] Siemens. 6AV6651-7KA02-3AA4. </a><br />
+	<a id="143" href="https://new.siemens.com/global/en/products/automation/simatic-hmi/panels.html">[143] Siemens. Machine level visualization withSIMATIC HMI. </a><br />
+	<a id="144" href="https://www.siemens.com/building-automation-systems">[144] Siemens. Siemens: Building automation and control systems | Building technology. </a><br />
+	<a id="145" href="https://new.siemens.com/global/en/products/automation/systems/industrial/plc.html">[145] Siemens. SIMATIC Controller â€“ Take control ofthe future. </a><br />
+	<a id="146" href="https://new.siemens.com/global/en/products/automation/industry-software/automation-software/scada/simatic-wincc-oa.html">[146] Siemens. SIMATIC WinCC Open Architecture. </a><br />
+	<a id="147" href="https://new.siemens.com/global/en/products/automation/industry-software/automation-software/scada/simatic-wincc-v7.html">[147] Siemens. SIMATIC WinCC V7.</a><br />
+	<a id="148" href="https://new.siemens.com/global/en/products/automation/industry-software/automation-software/tia-portal/software.html">[148] Siemens. Software in the TIA Portal. </a><br />
+	<a id="149" href="https://support.industry.siemens.com/cs/document/109758848/trial-download-simatic-s7-plcsim-advanced-v2-0-sp1?dti=0&lc=en-WW">[149] Siemens. TRIAL Download SIMATIC S7-PLCSIM Advanced V2.0 SP1. </a><br />
+	<a id="150" href="https://www.silabs.com/products/wireless/mesh-networking/z-wave/specification">[150] Silicon Labs. Z-Wave Specification. </a><br />
+	<a id="151" href="https://www.splunk.com/en_us/it-operations/server-monitoring.html">[151] splunk. Server Monitoring Software and Tools.</a><br />
+	<a id="152" href="https://docs.splunk.com/Documentation/MINTMgmtConsole/1.0/UserGuide/Networkmonitoring">[152] splunk. Splunk MINT Management ConsoleUser Guide. </a><br />
+	<a id="153" href="https://www.mpofcinci.com/blog/industrial-control-panel-design-guide/">[153] Shelly Stazzone. Industrial Control Panel DesignGuide: Schematics Standards Design Considerations& More. </a><br />
+	<a id="154"></a>[154] K. Stouffer, V. Pillitteri, S. Lightman, M. Abrams, andA. Hahn. Guide to Industrial Control Systems (ICS)Security. Technical report, 2015.<br />
+	<a id="155" href="https://study.com/articles/List_of_Free_Online_Electrician_Courses_Classes_and_Learning_Materials.html">[155] Study.com. List of Free Online Electrician Courses Classes and Learning Materials.</a><br />
+	<a id="156" href="https://tetcos.com/blog/2017/08/29/iot-netsim/">[156] Tetcos. Simulate Internet of Things Using NetSim. </a><br />
+	<a id="157"></a>[157] The Office for Nuclear Regulation. Security Assessment Principles for the Civil Nuclear Industry. Technical report, 2017.<br />
+	<a id="158" href="http://www.onr.org.uk/about.htm">[158] The Office for Nuclear Regulation. About ONR. </a><br />
+	<a id="159" href="http://www.trendcontrols.com/">[159] TrendControls. TrendControls: HVAC Controls | Building Energy Management Systems. </a><br />
+	<a id="160" href="https://partners.trendcontrols.com/trendproducts/cd/en/ecatdata/pg_gr-iqv.html">[160] TrendControls. TrendControls: IQ Vision Supervisor. </a><br />
+	<a id="161" href="https://www.tridium.com">[161] Tridium. Tridium | Harness the power of the Internetof Things with Niagara. </a><br />
+	<a id="162" href="https://www.newelectronics.co.uk/electronics/rs-launches-allen-bradley-plc-starter-kits-for-machine-and-motion-control-systems/222890/">[162] Neil Tyler. RS launches Allen-Bradley PLC starterkits for machine and motion control systems. </a><br />
+	<a id="163" href="https://ubuntu.com/server/docs/security-firewall">[163] Uvmwareiscsibuntu. Firewall. </a><br />
+	<a id="164" href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-98B36135-CDC1-435C-8F27-5E0D0187FF7E.html">[164] vmware. Active Directory LDAP Serverand OpenLDAP Server Identity SourceSettings. </a><br />
+	<a id="165" href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-C476065E-C02F-47FA-A5F7-3B3F2FD40EA8.html">[165] vmware. Configuring iSCSI Adapters and Storage.</a><br />
+	<a id="166" href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-9282A8E0-2A93-4F9E-AEFB-952C8DCB243C.html">[166] vmware. Understanding NetworkFile System Datastores. </a><br />
+	<a id="167" href="https://www.vmware.com/uk/products/vcenter-server.html">[167] vmware. vCenter Server. </a><br />
+	<a id="168" href="https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.networking.doc%2FGUID-7225A28C-DAAB-4E90-AE8C-795A755FBE27.html">[168] vmware. VLAN Configuration. </a><br />
+	<a id="169" href="https://www.vmware.com/support/pubs/sdk_pubs.html">[169] vmware. VMware API and SDK Documentation. </a><br />
+	<a id="170" href="https://www.vmware.com/uk/products/vsphere.html">[170] vmware. vSphere. </a><br />
+	<a id="171" href="https://www.vykon.com/">[171] Vykon. VYKON | Open intelligent building controlsolutions built on the Niagara Framework. </a><br />
+	<a id="172"></a>[172] T.J. Williams. The purdue enterprise reference architecture. Computers in industry, 24(2-3):141–158,1994.<br />
+	<a id="173" href="https://www.wireshark.org/">[173] Wireshark. About Wireshark. </a><br />
+	<a id="174"></a>[174] J. Wu and K. Kobara. Comparison of tools and simulators for control system security studies. In IEEE10th International Conference on Industrial Informatics, pages 45–50. IEEE, 2012.<br />
+	<a id="175" href="https://xbplib.readthedocs.io/en/latest/">[175] XBee. XBee Python Library. </a><br />
+	<a id="176" href="https://www.yale.co.uk/en/yale/couk/smart-living/">[176] Yale. Smart Home Security. </a><br />
+	<a id="177"></a>[177] Kurt Zeilenga et al. Lightweight directory access protocol (ldap): Technical specification road map. Technicalreport, RFC 4510, June, 2006.<br />
+	<a id="178" href="https://doc.zentyal.org/en/directory.html">[178] Zntyal. Domain Controller and File Sharing. </a>
+   </p>
+   -->
+   
+ </body>
+</html>
