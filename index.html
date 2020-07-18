@@ -19,8 +19,8 @@
   <img src="model-breakdown.png" class="center">
  
   <h1>Management Layer</h1>
-   <p>The <i>Management Layer</i> acts as central point from which oversight of a testbed can be established. This includes general functionality, from server management to network management, but extends to safety and security. If deployed in isolation from other layers as per our model, a clear demarcation between usable infrastructure and operational oversight can be established. However this may not be practical in smaller deployments.</p>
-   
+   <p>The Management Layer acts as central point from which oversight of a testbed can be established. This includes general functionality, from server management to network management, but extends to include the safety and security wraparound. Experimental instantiation is partially covered by this layer. For example, management access to a hypervisor can be used to deploy virtual machines within the Experimental Layer as per experimental design requirements. If deployed in isolation from other layers as per our model, a clear demarcation between usable infrastructure and operational oversight can be established, meaning management activities are undertaken in complete isolation from experimental activities. However, this may not be practical in smaller deployments.</p>
+  
    <h2>User Access Control</h2>
    
    <p>User access control is available through Microsoft Active Directory [<a href="#42">42</a>] and Zentyal [<a href="#178">178</a>].<br />
@@ -98,7 +98,7 @@
 	 </p>
    
   <h1>User Layer</h1>
-  <p>The <i>User Layer</i> presents an opportunity to centralise and manage a set of resources, which testbed users may require to deliver against set objectives. The benefit of this layer can be seen as the management of experimental tooling and systems with visibility over/access to the <i>Experimental Layer</i>. This may take many forms, particularly in smaller deployments.</p>
+  <p>The User Layer presents an opportunity to centralize and manage a set of resources, which testbed users may require to support experimental design, and to capture and analyze experimental data. The functionality of this layer can be viewed as the management of experimental tooling and systems with visibility over/access to the Experimental Layer. Therefore, experimental instantiation and execution are also supported by this layer through access into the Experimental Layer via the Infrastructure Bridge. For example, this could include accessing Experimental Layer devices, configuring them as per experimental Design requirements, then enabling (executing) their operation. This may take many forms, particularly in smaller deployments.</p>
    
    <h2>Workstations</h2>
     <p>The Kali Linux distribution [<a href="#138">138</a>] comes prebuilt with a large number of useful tools.<br />
@@ -166,11 +166,11 @@ Platforms such as vSphere support iSCSI devices [<a href="#43">43</a>, <a href="
 	 </p>
 	
   <h1>Infrastructure Bridge Layer</h1>
-  <p>Where a <i>User Layer</i> has been implemented, including an <i>Infrastructure Bridge</i> between it, and the <i>Experimental Layer</i>, can yield benefits aligned to data leakage and general system management/security. This bridge provides a network infrastructure to control the flow of data between the <i>User Layer</i> and the <i>Experimental Layer</i>. This can be of benefit when conducting high-risk research within the <i>Experimental Layer</i>, limiting the spread of malicious artefacts onto <i>User Layer</i> systems.</p>
+  <p>The Infrastructure Bridge provides a network infrastructure to control the flow of data between the User Layer and the Experimental Layer, supporting experimental instantiation and execution from the User Layer. This can be of benefit when conducting high-risk research within the Experimental Layer, limiting the spread of malicious artifacts onto User Layer systems.</p>
   
   <h1>Experimental Layer</h1>
-  <p>Forming the core component of any ICS testbed is the <i>Experimental Layer</i>, where all ICS components are deployed. Considering the Purdue Model as a high-level representation of ICS attributes, the <i>Experimental Layer</i> is where these are deployed. In addition to ICSs, we also consider neighbouring and emerging technologies encroaching into the ICS space that may need to be considered by testbed users. This includes building management systems (BMS), and the Internet of Things (IoT). As this model is designed to support cyber security testbed design, additional related systems may also be required here, Security Operations Centres (SOC) for example.</p>
-   
+  <p>Forming the core component of any ICS testbed is the Experimental Layer, where all ICS components are deployed supporting experimental instantiation and execution as per associated design requirements. Considering the Purdue Model as a high-level representation of ICS components, the Experimental Layer is where these are deployed. In addition to ICSs, we also consider neighboring and emerging technologies encroaching into the ICS space that may need to be considered by testbed users. This includes Building Management Systems (BMS) and the Internet of Things (IoT). As this model is designed to support cyber security testbed design, additional related systems may also be required here, Security Operations Centers (SOC) for example. </p>
+
    <h2>Industrial Control System</h2>
    <p>Practical examples of ICS architectures are presented by NIST [<a href="#154">154</a>], Kaspersky [<a href="#77">77</a>], and Cisco [<a href="#28">28</a>].<br />
    Process replication can be done physically with a self-built approach [<a href="#127">127</a>], using an off-the-shelf option replicating large scale processes [<a href="#65">65</a>] or mini replication kits [<a href="#55">55</a>]. Process replication can also be done virtually using simulation solutions either commercially [<a href="#51">51</a>], using open-sourced projects [<a href="#56">56</a>], or self-built using industrial protocols libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>].<br />
@@ -309,8 +309,9 @@ Virtualisation solutions are also available [<a href="#71">71</a>].</p>
 	 </p>
    
   <h1>Remote Access Layer</h1>
-   <p>Based on the size and access requirements, a <i>Remote Access Layer</i> can be implemented to accommodate interconnectivity between external experimental zones (e.g. partner organisations, mobile facilities, and remote worker simulation), external <i>User Layer</i> access, and remote <i>Management Layer</i> access.</p>
+   <p>Based on the size and access requirements, a Remote Access Layer can be implemented accommodating interconnectivity for external Experimental Layers (e.g. partner organizations, mobile facilities, and remote worker simulation), external User Layer access, and remote Management Layer access, supporting all elements of the experimental lifecycle. Where one may participate in a larger federated set of testbeds between a group of partnering organizations, it could be that our model is singular, with remote external experimental platforms all managed within one holistic environment. Alternatively, each member may operate every layer of our model independently, and share Experimental Layer resources.</p>
    
+
   <!--
   <h1>All References</h1>
    <p>
