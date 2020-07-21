@@ -11,7 +11,7 @@
  <body>
   <img src="lancaster-university-logo.png" class="center">
   
-  <p>This document presents the shared resources for our publication "<b>ICS Testbed Tetris: Practical Building Blocks Towards a Cyber Security Resource</b>" categorised per layer and per elements.</p>
+  <p>This document presents the shared resources for our publication "<b>ICS Testbed Tetris: Practical Building Blocks Towards a Cyber Security Resource</b>" categorised per layer and per element.</p>
   <p>If you would like to contribute to the development of this shared resource, please email us at <a href="mailto:tide-ssg@lancaster.ac.uk">tide-ssg@lancaster.ac.uk</a>.</p>
   
   <img src="model.png" class="center">
@@ -140,7 +140,7 @@ Platforms such as vSphere support iSCSI devices [<a href="#43">43</a>, <a href="
    
    <h2>Network Data Capture</h2>
     <p>Wireshark [<a href="#173">173</a>] is the leading network data capture software.<br />
-	Nwtwork traffic can be centralised using SPAN/RSPAN for Cisco [<a href="#27">27</a>], or analysers for Juniper [<a href="#74">74</a>].</p>
+	Network traffic can be centralised using SPAN/RSPAN for Cisco [<a href="#27">27</a>], or analysers for Juniper [<a href="#74">74</a>].</p>
 	<span class="showHide" onClick="$('#ndc').toggle();"><h3>Supporting References</h3></span>
      <p class="implementation-options" id="ndc">
 	  <a id="27" href="https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-switches/10570-41.html">[27] Cisco. Catalyst Switched Port Analyzer(SPAN) Configuration Example. </a><br />
@@ -169,12 +169,12 @@ Platforms such as vSphere support iSCSI devices [<a href="#43">43</a>, <a href="
   <p>The Infrastructure Bridge provides a network infrastructure to control the flow of data between the User Layer and the Experimental Layer, supporting experimental instantiation and execution from the User Layer. This can be of benefit when conducting high-risk research within the Experimental Layer, limiting the spread of malicious artifacts onto User Layer systems.</p>
   
   <h1>Experimental Layer</h1>
-  <p>Forming the core component of any ICS testbed is the Experimental Layer, where all ICS components are deployed supporting experimental instantiation and execution as per associated design requirements. Considering the Purdue Model as a high-level representation of ICS components, the Experimental Layer is where these are deployed. In addition to ICSs, we also consider neighboring and emerging technologies encroaching into the ICS space that may need to be considered by testbed users. This includes Building Management Systems (BMS) and the Internet of Things (IoT). As this model is designed to support cyber security testbed design, additional related systems may also be required here, Security Operations Centers (SOC) for example. </p>
+  <p>Forming the core component of any ICS testbed is the Experimental Layer, where all ICS components are deployed, supporting experimental instantiation and execution as per associated design requirements. Considering the Purdue Model as a high-level representation of ICS components, the Experimental Layer is where these are deployed. In addition to ICSs, we also consider neighboring and emerging technologies encroaching into the ICS space that may need to be considered by testbed users. This includes Building Management Systems (BMS) and the Internet of Things (IoT). As this model is designed to support cyber security testbed design, additional related systems may also be required here, Security Operations Centers (SOC) for example. </p>
 
    <h2>Industrial Control System</h2>
    <p>Practical examples of ICS architectures are presented by NIST [<a href="#154">154</a>], Kaspersky [<a href="#77">77</a>], and Cisco [<a href="#28">28</a>].<br />
    Process replication can be done physically with a self-built approach [<a href="#127">127</a>], using an off-the-shelf option replicating large scale processes [<a href="#65">65</a>] or mini replication kits [<a href="#55">55</a>]. Process replication can also be done virtually using simulation solutions either commercially [<a href="#51">51</a>], using open-sourced projects [<a href="#56">56</a>], or self-built using industrial protocols libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>].<br />
-   Physical devices vendors include [<a href="#131">131</a>], Schneider [<a href="#46">46</a>], ABB [<a href="#3">3</a>], and [<a href="#145">145</a>]. Some include stater kits [<a href="#142">142</a>, <a href="#162">162</a>]. PLCs simulation software are available [<a href="#149">149</a>], or could be self-developed using microcontroller development boards/single board computers [<a href="#10">10</a>, <a href="#14">14</a>, <a href="#115">115</a>]..<br />
+   Physical devices vendors include [<a href="#131">131</a>], Schneider [<a href="#46">46</a>], ABB [<a href="#3">3</a>], and [<a href="#145">145</a>]. Some include stater kits [<a href="#142">142</a>, <a href="#162">162</a>]. PLCs simulation software are available [<a href="#149">149</a>], or could be self-developed using microcontroller development boards/single board computers [<a href="#10">10</a>, <a href="#14">14</a>, <a href="#115">115</a>].<br />
    HMIs can be obtained from Rockwell [<a href="#130">130</a>], Schneider [<a href="#48">48</a>], ABB [<a href="#2">2</a>], and Siemens [<a href="#143">143</a>], can be replaced by desktop-based software [<a href="#129">129</a>, <a href="#147">147</a>], or could be self-developed using libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>].<br />
    Historian software such as OSISoft [<a href="#111">111</a>] and Kepware [<a href="#79">79</a>] can be used to collect and analyse data. It could also be self-developed using libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#118">118</a>, <a href="#110">110</a>, <a href="#85">85</a>].<br />
    Top-end systems can be developed using libraries [<a href="#33">33</a>, <a href="#70">70</a>, <a href="#85">85</a>, <a href="#98">98</a>, <a href="#102">102</a>, <a href="#110">110</a>, <a href="#118">118</a>]. Commercial solutions are available from  Rockwell [<a href="#128">128</a>], Schneider [<a href="#45">45</a>], ABB [<a href="#4">4</a>], and Siemens [<a href="#146">146</a>], with some providing demo licences [<a href="#47">47</a>]. Open sourced options are also available, including RapidSCADA [<a href="#136">136</a>], OpenSCADA [<a href="#135">135</a>], and Tango [<a href="#38">38</a>]<br /> Moving into the IIoT space, commercial products are available from Thingworx [<a href="#121">121</a>] and Intelligent Plant [<a href="#116">116</a>].<br />
@@ -295,7 +295,7 @@ Virtualisation solutions are also available [<a href="#71">71</a>].</p>
    
    <h2>Security Operations Center</h2>
     <p>Endpoint detection solution include AT&T's AlienVault Unified Security Management [<a href="#12">12</a>], FireEye's Endpoint Security [<a href="#52">52</a>], or the more threat hunting oriented HELK which utilises the Elastic Stack [<a href="#104">104</a>, <a href="#132">132</a>].<br />
-	The network traffic can be passed to specialist devices capable of ICS protocol recognition [<a href="#21">21</a>, <a href="#32">32</a>, <a href="#57">57</a>, <a href="#58">58</a>].</p>
+	The network traffic can be passed to specialised devices capable of ICS protocol recognition [<a href="#21">21</a>, <a href="#32">32</a>, <a href="#57">57</a>, <a href="#58">58</a>].</p>
 	<span class="showHide" onClick="$('#soc').toggle();"><h3>Supporting References</h3></span>
      <p class="implementation-options" id="soc">
 	  <a id="12" href="https://cybersecurity.att.com/solutions/endpoint-detection-and-response">[12] AT&T. Endpoint Detection and Response(EDR) | AlienVault | AT&T Cybersecurity.</a><br />
@@ -311,7 +311,7 @@ Virtualisation solutions are also available [<a href="#71">71</a>].</p>
   <h1>Remote Access Layer</h1>
    <p>Based on the size and access requirements, a Remote Access Layer can be implemented accommodating interconnectivity for external Experimental Layers (e.g. partner organizations, mobile facilities, and remote worker simulation), external User Layer access, and remote Management Layer access, supporting all elements of the experimental lifecycle. Where one may participate in a larger federated set of testbeds between a group of partnering organizations, it could be that our model is singular, with remote external experimental platforms all managed within one holistic environment. Alternatively, each member may operate every layer of our model independently, and share Experimental Layer resources.</p>
   
-   <p> A router could act as a traditional, centralized VPN connection point for all external connectivity, a "hub-and-spoke" architecture [<a href="#25">25</a>]  <br />
+   <p> A router could act as a traditional, centralized VPN connection point for all external connectivity, a "hub-and-spoke" architecture [<a href="#25">25</a>].  <br />
 	   Alternatively, a single tunnel to a centralized platform such as Perimeter 81 [<a href="#1">1</a>] can be used to managed all external connectivity.
    </p>
    <span class="showHide" onClick="$('#ral').toggle();"><h3>Supporting References</h3></span>
