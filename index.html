@@ -5,18 +5,19 @@
    .center { display: block; margin-left: auto; margin-right: auto; width: 50%; }
    .showHide { color: blue; text-decoration: underline; cursor: pointer; }
    .implementation-options { display:none; }
+   .images { width:350px; }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  </head>
  <body>
-  <img src="lancaster-university-logo.png" class="center">
+  <img src="lancaster-university-logo.png" class="center images">
   
   <p>This document presents the shared resources for our publication "<b>ICS Testbed Tetris: Practical Building Blocks Towards a Cyber Security Resource</b>" categorised per layer and per element.</p>
   <p>If you would like to contribute to the development of this shared resource, please email us at <a href="mailto:tide-ssg@lancaster.ac.uk">tide-ssg@lancaster.ac.uk</a>.</p>
   
-  <img src="model.png" class="center">
+  <img src="model.png" class="center images">
   <br /><br />
-  <img src="model-breakdown.png" class="center">
+  <img src="model-breakdown.png" class="center images">
  
   <h1>Management Layer</h1>
    <p>The Management Layer acts as central point from which oversight of a testbed can be established. This includes general functionality, from server management to network management, but extends to include the safety and security wraparound. Experimental instantiation is partially covered by this layer. For example, management access to a hypervisor can be used to deploy virtual machines within the Experimental Layer as per experimental design requirements. If deployed in isolation from other layers as per our model, a clear demarcation between usable infrastructure and operational oversight can be established, meaning management activities are undertaken in complete isolation from experimental activities. However, this may not be practical in smaller deployments.</p>
